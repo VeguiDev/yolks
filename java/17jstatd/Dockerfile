@@ -31,7 +31,7 @@ RUN 		apt-get update -y \
     && apt-get install -y lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
     && useradd -d /home/container -m container
 
-RUN         apt-get install screen
+RUN         apt-get install -y screen
 RUN         screen -dmS jstatd jstatd -P 1099
 
 USER        container
