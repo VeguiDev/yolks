@@ -1,14 +1,12 @@
-FROM debian:bookworm-slim
-
-FROM ghcr.io/graalvm/native-image-community:17-muslib
+FROM --platform=$TARGETOS/$TARGETARCH ghcr.io/graalvm/jdk-community:17
 
 LABEL       author="VeguiDev" maintainer="veguidev@farfania.com"
 
 LABEL       org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
 LABEL       org.opencontainers.image.licenses=MIT
 
-RUN 				apk update -y \
-    && apk install -y lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
+RUN 				yum update -y \
+    && yum install -y lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
     && useradd -d /home/container -m container
 
 USER        container
