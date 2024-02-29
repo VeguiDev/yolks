@@ -1,6 +1,5 @@
-FROM $TARGETOS:$TARGETARCH
+FROM ghcr.io/graalvm/native-image-community:17-muslib
 
-FROM ghcr.io/graalvm/jdk-community:17
 
 LABEL       author="VeguiDev" maintainer="veguidev@farfania.com"
 
