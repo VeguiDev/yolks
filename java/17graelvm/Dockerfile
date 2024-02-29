@@ -7,8 +7,8 @@ LABEL       author="VeguiDev" maintainer="veguidev@farfania.com"
 LABEL       org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
 LABEL       org.opencontainers.image.licenses=MIT
 
-RUN 				apt update -y \
-    && apt install -y lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
+RUN 				apk update -y \
+    && apk install -y lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
     && useradd -d /home/container -m container
 
 USER        container
