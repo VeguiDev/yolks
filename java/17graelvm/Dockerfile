@@ -1,3 +1,6 @@
+ARG TARGETOS
+ARG TARGETARCH
+
 FROM alpine:latest
 
 RUN wget https://download.oracle.com/graalvm/17/latest/graalvm-jdk-17_${TARGETOS}-${TARGETARCH}_bin.tar.gz
