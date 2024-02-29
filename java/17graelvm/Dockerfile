@@ -1,10 +1,7 @@
-ARG TARGETOS
-ARG TARGETARCH
-
 FROM alpine:latest
 
-RUN wget "https://download.oracle.com/graalvm/17/latest/graalvm-jdk-17_${TARGETOS}-${TARGETARCH}_bin.tar.gz"
-RUN tar -xvf "graalvm-jdk-17_${TARGETOS}-${TARGETARCH}_bin.tar.gz"
+RUN wget "https://download.oracle.com/graalvm/17/latest/graalvm-jdk-17_linux-x64_bin.tar.gz"
+RUN tar -xvf "graalvm-jdk-17_linux-x64_bin.tar.gz"
 
 ENV PATH="/graalvm-jdk-17/bin:${PATH}"
 ENV JAVA_HOME="/graalvm-jdk-17"
