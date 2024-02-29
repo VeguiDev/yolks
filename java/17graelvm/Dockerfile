@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM alpine:latest
 
 RUN wget https://download.oracle.com/graalvm/17/latest/graalvm-jdk-17_$TARGETOS-$TARGETARCH_bin.tar.gz
 RUN tar -xvf graalvm-jdk-17_$TARGETOS-$TARGETARCH_bin.tar.gz
