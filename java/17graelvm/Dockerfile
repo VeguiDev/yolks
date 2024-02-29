@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM debian:latest
 
 RUN wget "https://download.oracle.com/graalvm/17/latest/graalvm-jdk-17_linux-x64_bin.tar.gz"
 RUN tar -xvf "graalvm-jdk-17_linux-x64_bin.tar.gz"
@@ -11,8 +11,8 @@ LABEL       author="VeguiDev" maintainer="veguidev@farfania.com"
 LABEL       org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
 LABEL       org.opencontainers.image.licenses=MIT
 
-RUN 				apk update \
-    && apk add lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
+RUN 				apt-get update -y \
+    && apt-get -y install lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
     && useradd -d /home/container -m container
 
 USER        container
