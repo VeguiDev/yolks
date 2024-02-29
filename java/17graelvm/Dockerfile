@@ -1,4 +1,4 @@
-FROM --platform=$TARGETOS/$TARGETARCH ghcr.io/graalvm/jdk-community:17
+FROM --platform=$TARGETOS/$TARGETARCH ghcr.io/graalvm/native-image-community:17
 
 LABEL       author="VeguiDev" maintainer="veguidev@farfania.com"
 
