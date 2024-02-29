@@ -1,5 +1,6 @@
-FROM ghcr.io/graalvm/native-image-community:17-muslib
+FROM alpine:latest
 
+FROM ghcr.io/graalvm/native-image-community:17-muslib
 
 LABEL       author="VeguiDev" maintainer="veguidev@farfania.com"
 
