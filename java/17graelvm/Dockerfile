@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM debian:bookworm-slim
 
 FROM ghcr.io/graalvm/native-image-community:17-muslib
 
