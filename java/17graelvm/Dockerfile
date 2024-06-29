@@ -4,6 +4,7 @@ LABEL author="VeguiDev" maintainer="veguidev@farfania.com"
 LABEL org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
 LABEL org.opencontainers.image.licenses=MIT
 
+# Update system and install dependencies
 RUN apt-get update -y \
     && apt-get -y install wget lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
     && useradd -d /home/container -m container
