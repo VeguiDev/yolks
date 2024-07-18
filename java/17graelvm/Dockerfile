@@ -20,12 +20,12 @@ ENV PATH="/usr/local/graalvm/bin:${PATH}"
 ENV JAVA_HOME="/usr/local/graalvm"
 ENV LD_BIND_NOW=1
 
+RUN chmod 0755 /usr/local/graalvm/bin/java
 
 USER container
 ENV USER=container HOME=/home/container
 WORKDIR /home/container
 
 COPY ./../entrypoint.sh /entrypoint.sh
-RUN chmod 0755 /entrypoint.sh
-RUN chmod 0755 /usr/local/graalvm/bin/java
+
 CMD [ "/bin/sh", "/entrypoint.sh" ]
