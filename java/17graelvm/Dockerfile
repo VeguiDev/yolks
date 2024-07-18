@@ -4,8 +4,7 @@ LABEL author="VeguiDev" maintainer="veguidev@farfania.com"
 LABEL org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
 LABEL org.opencontainers.image.licenses=MIT
 
-ENV GLIBC_VERSION=2.35-r1 \
-    GRAALVM_VERSION=17.0.12 \
+ENV GRAALVM_VERSION=17.0.12 \
     JAVA_HOME=/usr/lib/jvm/graalvm-ce-17.0.12 \
     PATH=/usr/lib/jvm/graalvm-ce-17.0.12/bin:$PATH
 
@@ -15,17 +14,6 @@ RUN mkdir /usr/lib/jvm; \
     wget "https://github.com/oracle/graal/releases/download/vm-${GRAALVM_VERSION}/graalvm-ce-${GRAALVM_VERSION}-linux-amd64.tar.gz"; \
     tar -zxC /usr/lib/jvm -f graalvm-ce-${GRAALVM_VERSION}-linux-amd64.tar.gz; \
     rm -f graalvm-ce-${GRAALVM_VERSION}-linux-amd64.tar.gz
-
-RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
-    &&  wget "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/$GLIBC_VERSION/glibc-$GLIBC_VERSION.apk" \
-    &&  apk --no-cache add "glibc-$GLIBC_VERSION.apk" \
-    &&  rm "glibc-$GLIBC_VERSION.apk" \
-    &&  wget "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/$GLIBC_VERSION/glibc-bin-$GLIBC_VERSION.apk" \
-    &&  apk --no-cache add "glibc-bin-$GLIBC_VERSION.apk" \
-    &&  rm "glibc-bin-$GLIBC_VERSION.apk" \
-    &&  wget "https://github.com/sgerrand/alpine-pkg-glibc/releases/download/$GLIBC_VERSION/glibc-i18n-$GLIBC_VERSION.apk" \
-    &&  apk --no-cache add "glibc-i18n-$GLIBC_VERSION.apk" \
-    &&  rm "glibc-i18n-$GLIBC_VERSION.apk"
 
 ENV LD_BIND_NOW=1
 
