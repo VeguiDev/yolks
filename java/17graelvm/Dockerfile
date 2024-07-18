@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM alpine:latest
 
 LABEL author="VeguiDev" maintainer="veguidev@farfania.com"
 LABEL org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
@@ -20,6 +20,7 @@ RUN wget "https://download.oracle.com/graalvm/17/latest/graalvm-jdk-17_linux-x64
 ENV PATH="/usr/local/graalvm/bin:${PATH}"
 ENV JAVA_HOME="/usr/local/graalvm"
 ENV LD_BIND_NOW=1
+
 
 USER container
 ENV USER=container HOME=/home/container
