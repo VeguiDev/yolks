@@ -20,8 +20,6 @@ LABEL org.opencontainers.image.licenses=MIT
 # ENV JAVA_HOME="/usr/local/graalvm"
 ENV LD_BIND_NOW=1
 
-RUN chmod 0755 /usr/local/graalvm/bin/java
-
 USER container
 ENV USER=container HOME=/home/container
 WORKDIR /home/container
