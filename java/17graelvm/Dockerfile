@@ -26,6 +26,6 @@ ENV USER=container HOME=/home/container
 WORKDIR /home/container
 
 COPY ./../entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-RUN chmod +x /usr/local/graalvm/bin/java
+RUN chmod 0755 /entrypoint.sh
+RUN chmod 0755 /usr/local/graalvm/bin/java
 CMD [ "/bin/sh", "/entrypoint.sh" ]
