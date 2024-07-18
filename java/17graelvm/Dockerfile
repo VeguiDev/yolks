@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-alpine3.20-jdk
+FROM eclipse-temurin:17-jdk-alpine
 
 LABEL author="VeguiDev" maintainer="veguidev@farfania.com"
 LABEL org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
