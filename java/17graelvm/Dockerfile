@@ -5,8 +5,8 @@ LABEL org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
 LABEL org.opencontainers.image.licenses=MIT
 
 # Update system and install dependencies
-RUN apk update -y \
-    && apk -y add wget lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
+RUN apk update \
+    && apk add --no-cache wget lsof curl ca-certificates openssl git tar sqlite3 fontconfig libfreetype6 tzdata iproute2 libstdc++6 \
     && useradd -d /home/container -m container
 
 # Descargar y extraer GraalVM
