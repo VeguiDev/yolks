@@ -1,4 +1,4 @@
-FROM amazoncorretto:alpine3.17
+FROM amazoncorretto:17-alpine3.20-jdk
 
 LABEL author="VeguiDev" maintainer="veguidev@farfania.com"
 LABEL org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
