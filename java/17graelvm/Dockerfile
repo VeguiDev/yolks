@@ -19,6 +19,7 @@ RUN wget "https://download.oracle.com/graalvm/17/latest/graalvm-jdk-17_linux-x64
 # Establecer las variables de entorno
 ENV PATH="/usr/local/graalvm/bin:${PATH}"
 ENV JAVA_HOME="/usr/local/graalvm"
+ENV LD_BIND_NOW=1
 
 USER container
 ENV USER=container HOME=/home/container
