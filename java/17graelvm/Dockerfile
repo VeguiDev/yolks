@@ -11,9 +11,9 @@ ENV GRAALVM_VERSION=17.0.12 \
 RUN apk --no-cache add ca-certificates wget gcc zlib zlib-dev libc-dev
 
 RUN mkdir /usr/lib/jvm; \
-    wget "https://github.com/oracle/graal/releases/download/vm-${GRAALVM_VERSION}/graalvm-ce-${GRAALVM_VERSION}-linux-amd64.tar.gz"; \
-    tar -zxC /usr/lib/jvm -f graalvm-ce-${GRAALVM_VERSION}-linux-amd64.tar.gz; \
-    rm -f graalvm-ce-${GRAALVM_VERSION}-linux-amd64.tar.gz
+    wget "https://download.oracle.com/graalvm/17/latest/graalvm-jdk-17_linux-x64_bin.tar.gz"; \
+    tar -zxC /usr/lib/jvm -f graalvm-jdk-17_linux-x64_bin.tar.gz; \
+    rm -f graalvm-jdk-17_linux-x64_bin.tar.gz
 
 ENV LD_BIND_NOW=1
 
