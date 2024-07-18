@@ -1,20 +1,20 @@
-FROM alpine:latest
+FROM amazoncorretto:alpine3.17
 
 LABEL author="VeguiDev" maintainer="veguidev@farfania.com"
 LABEL org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
 LABEL org.opencontainers.image.licenses=MIT
 
-ENV GRAALVM_VERSION=17.0.12 \
-    JAVA_HOME=/usr/lib/jvm/graalvm-jdk-17.0.12+8.1 \
-    PATH=/usr/lib/jvm/graalvm-jdk-17.0.12+8.1/bin:$PATH
+# ENV GRAALVM_VERSION=17.0.12 \
+#     JAVA_HOME=/usr/lib/jvm/graalvm-jdk-17.0.12+8.1 \
+#     PATH=/usr/lib/jvm/graalvm-jdk-17.0.12+8.1/bin:$PATH
 
-RUN apk --no-cache add ca-certificates wget gcc zlib zlib-dev libc-dev
-RUN apk add gcompat
+# RUN apk --no-cache add ca-certificates wget gcc zlib zlib-dev libc-dev
+# RUN apk add gcompat
 
-RUN mkdir /usr/lib/jvm; \
-    wget "https://download.oracle.com/graalvm/17/latest/graalvm-jdk-17_linux-x64_bin.tar.gz"; \
-    tar -zxC /usr/lib/jvm -f graalvm-jdk-17_linux-x64_bin.tar.gz; \
-    rm -f graalvm-jdk-17_linux-x64_bin.tar.gz
+# RUN mkdir /usr/lib/jvm; \
+#     wget "https://download.oracle.com/graalvm/17/latest/graalvm-jdk-17_linux-x64_bin.tar.gz"; \
+#     tar -zxC /usr/lib/jvm -f graalvm-jdk-17_linux-x64_bin.tar.gz; \
+#     rm -f graalvm-jdk-17_linux-x64_bin.tar.gz
 
 ENV LD_BIND_NOW=1
 
