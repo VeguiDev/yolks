@@ -5,8 +5,8 @@ LABEL org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
 LABEL org.opencontainers.image.licenses=MIT
 
 ENV GRAALVM_VERSION=17.0.12 \
-    JAVA_HOME=/usr/lib/jvm/graalvm-ce-17.0.12 \
-    PATH=/usr/lib/jvm/graalvm-ce-17.0.12/bin:$PATH
+    JAVA_HOME=/usr/lib/jvm/graalvm-jdk-17.0.12+8.1 \
+    PATH=/usr/lib/jvm/graalvm-jdk-17.0.12+8.1/bin:$PATH
 
 RUN apk --no-cache add ca-certificates wget gcc zlib zlib-dev libc-dev
 
