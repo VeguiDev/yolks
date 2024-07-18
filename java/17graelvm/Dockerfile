@@ -5,7 +5,8 @@ LABEL org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
 LABEL org.opencontainers.image.licenses=MIT
 
 # Update system and install dependencies
-RUN apk add --no-cache wget tar
+RUN apk add --no-cache wget tar \
+    && adduser -h /home/container -D container
 
 # Descargar y extraer GraalVM
 RUN wget "https://download.oracle.com/graalvm/17/latest/graalvm-jdk-17_linux-x64_bin.tar.gz" -O /tmp/graalvm-jdk-17_linux-x64_bin.tar.gz \
