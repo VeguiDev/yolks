@@ -1,4 +1,4 @@
-FROM debian:jammy
+FROM debian:stable-slim
 
 LABEL author="VeguiDev" maintainer="veguidev@farfania.com"
 LABEL org.opencontainers.image.source="https://github.com/VeguiDev/yolks"
