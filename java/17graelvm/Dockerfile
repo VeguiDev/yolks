@@ -22,6 +22,7 @@ ENV JAVA_HOME="/usr/local/graalvm"
 
 USER container
 ENV USER=container HOME=/home/container
+ENV LD_BIND_NOW=1
 WORKDIR /home/container
 
 COPY ./../entrypoint.sh /entrypoint.sh

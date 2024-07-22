@@ -33,8 +33,6 @@ export INTERNAL_IP
 # Switch to the container's working directory
 cd /home/container || exit 1
 
-ls /usr/lib/jvm
-
 # Print Java version
 printf "\033[1m\033[33mcontainer@pterodactyl~ \033[0mjava -version\n"
 java -version
@@ -43,6 +41,8 @@ java -version
 # variable format of "${VARIABLE}" before evaluating the string and automatically
 # replacing the values.
 PARSED=$(echo "${STARTUP}" | sed -e 's/{{/${/g' -e 's/}}/}/g' | eval echo "$(cat -)")
+
+export LD_BIND_NOW=1
 
 # Display the command we're running in the output, and then execute it with the env
 # from the container itself.
