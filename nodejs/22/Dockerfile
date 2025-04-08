@@ -37,12 +37,7 @@ RUN apt install -y \
     ca-certificates \
     fonts-noto-color-emoji
 
-RUN         npm install npm@latest typescript ts-node @types/node --location=global
-
-# install pnpm
-RUN         npm install -g corepack
-RUN         corepack enable
-RUN         corepack prepare pnpm@latest --activate
+RUN         npm install --global npm@latest typescript ts-node @types/node
 
 USER        container
 ENV         USER=container HOME=/home/container
