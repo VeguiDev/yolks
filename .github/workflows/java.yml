@@ -28,9 +28,8 @@ jobs:
           - 19
           - 19j9
           - 17jstatd
-          - 17graalvm
           - 22graalvm
-          - 24graelvm
+          - 24graalvm
     steps:
       - uses: actions/checkout@v3
       - uses: docker/setup-qemu-action@v2
