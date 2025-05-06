@@ -10,7 +10,7 @@ RUN apt-get update -y \
     && useradd -d /home/container -m container
 
 # Descargar y extraer GraalVM
-RUN wget "https://download.oracle.com/graalvm/24/latest/graalvm-jdk-24_linux-x64_bin.tar.gz" -O /tmp/graalvm-jdk-22_linux-x64_bin.tar.gz \
+RUN wget "https://download.oracle.com/graalvm/24/latest/graalvm-jdk-24_linux-x64_bin.tar.gz" -O /tmp/graalvm-jdk-24_linux-x64_bin.tar.gz \
     && tar -xvf /tmp/graalvm-jdk-24_linux-x64_bin.tar.gz -C /tmp \
     && DIR_NAME=$(tar -tf /tmp/graalvm-jdk-24_linux-x64_bin.tar.gz | head -1 | cut -d "/" -f 1) \
     && mv /tmp/$DIR_NAME /usr/local/graalvm \
